@@ -117,5 +117,7 @@ void* calculate(void *ptr){
 		
 	}
 	usleep(10000);
-	pthread_exit((void*)result);
+	pthread_exit((void*)(intptr_t)result);
+	//pthread_exit(result);
+
 }
