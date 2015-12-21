@@ -3,11 +3,13 @@
 #include <stdlib.h>
 #include <error.h>
 #include <unistd.h>
+//parameter thread used
 struct parameter{
 	int* arrrow,*arrcol;
 	int size;
 };
 
+//function thread used
 void* calculate(void *ptr);
 
 int main(int argc,char** argv){
@@ -17,6 +19,7 @@ int main(int argc,char** argv){
 	int	row1,row2,col1,col2;
 	int **calrow,**calcol;
 	int* reta;
+	//input file read
 	if(argc < 2){
 		perror("Please input file name!");
 		return -1;
@@ -69,7 +72,7 @@ int main(int argc,char** argv){
 
 	for(int i =0 ;i<row1;i++){
 		for(int j=0;j<col1;j++){
-			printf("%d ",threadpara[i*(row1-1)].arrrow[j]);
+			printf("%d ",threadpara[i*col2].arrrow[j]);
 		}
 		printf("\n");
 	}
